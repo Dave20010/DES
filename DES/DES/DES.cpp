@@ -6,11 +6,11 @@
 /// Encryption/Decryption
 ///////////////////////////////
 
-char *DES::Encrypt(char *p)
+char *DES::Encrypt(char *p, int rounds)
 {
 	char *result = p;
 	result = PrivInitialPermutation(result);
-	for (int i = 0; i < 16; i++)
+	for (int i = 0; i < rounds; i++)
 	{
 		result = F(result);
 	}

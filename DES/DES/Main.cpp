@@ -19,7 +19,7 @@ int main()
 	std::cin >> Plaintext;
 	printf("\n");
 
-	char *Ciphertext = DESEncrypt.Encrypt(Plaintext);
+	char *Ciphertext = DESEncrypt.Encrypt(Plaintext, 1);
 	printf("%s\n", Ciphertext);
 
 	return 0;

@@ -48,7 +48,7 @@ public:
 	/// Encryption/Decryption
 	///////////////////////////////
 
-	char *Encrypt(char *p);
+	char *Encrypt(char *p, int rounds);
 	char *Decrypt(char *c);
 };
 
