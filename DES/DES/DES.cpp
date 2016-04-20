@@ -1,6 +1,7 @@
 #include "DES.h"
 #include <string.h>
 #include <intrin.h>
+#include <iostream>
 
 ///////////////////////////////
 /// Encryption/Decryption
@@ -103,6 +104,10 @@ int DES::GetKeyArraySize()
 DES::DES()
 	: _key(0), _round(0)
 {
+	for (int i = 0; i < 16; i++)
+	{
+		_ScheduledKeys[i] = new char[6];
+	}
 	memset(_ScheduledKeys, 0, GetKeyArraySize());
 }
 
@@ -123,7 +128,11 @@ DES &DES::operator=(const DES &d)
 DES::DES(char *key)
 	: _key(key), _round(0)
 {
-	memset(_ScheduledKeys, 0, GetKeyArraySize());
+	for (int i = 0; i < 16; i++)
+	{
+		_ScheduledKeys[i] = new char[6];
+	}
+	PrivScheduleKeys();
 }
 
 DES::~DES()
