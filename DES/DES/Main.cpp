@@ -5,8 +5,6 @@
 
 int main()
 {
-	printf( "THIS IS A HG TEST" );
-
 	printf("Starting Encryption\n");
 	printf("===================\n\n");
 
